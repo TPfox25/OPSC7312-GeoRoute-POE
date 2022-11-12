@@ -15,15 +15,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GeoRoute">
+
         <activity
             android:name=".Signup"
-            android:exported="false" />
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
         <activity
             android:name=".MapsActivity"
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="false" />
+            android:exported="false"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -31,13 +41,9 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
     </application>
 
 </manifest>

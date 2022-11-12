@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Signup extends AppCompatActivity {
 
     EditText fullName, email, phone, password;
-    Button registerBtn;
+    Button signUpBtn;
     TextView loginBtn;
     FirebaseAuth mAuth;
 
@@ -34,7 +35,7 @@ public class Signup extends AppCompatActivity {
         email = findViewById(R.id.email);
         phone = findViewById(R.id.phone);
         password = findViewById(R.id.password);
-        registerBtn = findViewById(R.id.registerBtn);
+        signUpBtn = findViewById(R.id.registerBtn);
         loginBtn = findViewById(R.id.loginBtn);
 
         mAuth = FirebaseAuth.getInstance();
@@ -44,7 +45,7 @@ public class Signup extends AppCompatActivity {
             finish();
         }
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
+        signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String fEmail = email.getText().toString().trim();
@@ -75,7 +76,8 @@ public class Signup extends AppCompatActivity {
                 loginBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        startActivity(new Intent(getApplicationContext(), Login.class));
+                        Intent intent = new Intent(Signup.this, Login.class);
+                        startActivity(intent);
                     }
                 });
             }

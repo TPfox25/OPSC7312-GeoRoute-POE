@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1082742994882",
+    "project_id": "georoute-95bd2",
+    "storage_bucket": "georoute-95bd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082742994882:android:e3381d905aa8d1994b085b",
+        "android_client_info": {
+          "package_name": "com.codingwithmitch.googlemaps2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082742994882-dgd442e7pdh660dp65h8ple93vbe0cjd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0EaJc_dk1y9-Wz8IYHmNg9y6Cl5bDu04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082742994882-dgd442e7pdh660dp65h8ple93vbe0cjd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082742994882:android:e63c373f67a3d4eb4b085b",
+        "android_client_info": {
+          "package_name": "com.taftonpaul.georoute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082742994882-dgd442e7pdh660dp65h8ple93vbe0cjd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0EaJc_dk1y9-Wz8IYHmNg9y6Cl5bDu04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082742994882-dgd442e7pdh660dp65h8ple93vbe0cjd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

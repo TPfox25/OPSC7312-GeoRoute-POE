@@ -175,7 +175,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         //method calls
         getLocationPermission();
         fetchLastLocation();
-        getDeviceLocation();
+        getCurrentLocation();
     }
 
     private void getCurrentLocation() {

@@ -53,8 +53,6 @@
             android:textColor="#000"
             android:textSize="15sp" />
 
-
-
     </RelativeLayout>
 
     <ImageView
@@ -76,17 +74,14 @@
             android:id="@+id/sp_type"
             android:layout_width="266dp"
             android:layout_height="48dp"
-            android:layout_marginTop="669dp"
-            android:layout_marginEnd="27dp"
-            android:layout_marginBottom="35dp"
             android:layout_weight="1"
             android:background="@android:drawable/editbox_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.135"
+            app:layout_constraintHorizontal_bias="0.11"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.133"
+            app:layout_constraintVertical_bias="0.967"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
@@ -102,7 +97,7 @@
             app:layout_constraintHorizontal_bias="0.949"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.375" />
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

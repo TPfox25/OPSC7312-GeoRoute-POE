@@ -38,42 +38,9 @@ public class Signup extends AppCompatActivity {
         signUpBtn = findViewById(R.id.registerBtn);
         loginBtn = findViewById(R.id.loginBtn);
 
-        mAuth = FirebaseAuth.getInstance();
 
-        if (mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        }
 
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String fEmail = email.getText().toString().trim();
-                String fPassword = password.getText().toString().trim();
-
-                if (TextUtils.isEmpty(fEmail)) {
-                    email.setError("Email is required");
-                    Toast.makeText(Signup.this, "Email is required", Toast.LENGTH_SHORT).show();
-                }
-
-                if (TextUtils.isEmpty(fPassword)) {
-                    password.setError("Password is required");
-                    Toast.makeText(Signup.this, "Password is required", Toast.LENGTH_SHORT).show();
-                }
-
-                mAuth.createUserWithEmailAndPassword(fEmail, fPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Signup.this, "User Created", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        } else {
-                            Toast.makeText(Signup.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-                loginBtn.setOnClickListener(new View.OnClickListener() {
+                signUpBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(Signup.this, Login.class);
@@ -81,6 +48,4 @@ public class Signup extends AppCompatActivity {
                     }
                 });
             }
-        });
     }
-}

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GeoRoute</string>
+    <string name="google_map_key">AIzaSyAz8PNPYyW4QMBhhw--Ig4rgnrwx6_zX8A</string>
 </resources>

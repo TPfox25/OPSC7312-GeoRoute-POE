@@ -74,6 +74,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ImageView mGps;
     private Spinner spType;
     private Button btnFind;
+    private TextView tvNormal, tvSatellite, tvTerrain;
 
 
     @Override
@@ -96,9 +97,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             mMap.setMyLocationEnabled(true);
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
-            mMap.getUiSettings().setCompassEnabled(true);
-            mMap.getUiSettings().setIndoorLevelPickerEnabled(true);
-            mMap.getUiSettings().setMapToolbarEnabled(true);
+
 
             init();
         }
@@ -126,6 +125,47 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mGps = (ImageView) findViewById(R.id.ic_gps);
         spType = (Spinner) findViewById(R.id.sp_type);
         btnFind = (Button) findViewById(R.id.btn_find);
+        tvNormal = findViewById(R.id.tv_normal);
+        tvSatellite = findViewById(R.id.tv_satellite);
+        tvTerrain = findViewById(R.id.tv_terrain);
+
+        tvNormal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                tvNormal.setBackgroundResource(R.drawable.map);
+                tvSatellite.setVisibility(View.VISIBLE);
+                tvNormal.setVisibility(View.GONE);
+            }
+        });
+
+        tvSatellite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                tvSatellite.setBackgroundResource(R.drawable.satellite);
+                tvNormal.setVisibility(View.VISIBLE);
+                tvSatellite.setVisibility(View.GONE);
+            }
+        });
+
+        tvTerrain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+                tvTerrain.setVisibility(View.GONE);
+                tvNormal.setVisibility(View.VISIBLE);
+            }
+        });
+
+        tvNormal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                tvNormal.setVisibility(View.GONE);
+                tvTerrain.setVisibility(View.VISIBLE);
+            }
+        });
 
         // Initialize array of place type
         String[] placeTypeList = {"atm", "bank", "hospital", "movie_theatre", "restaurants"};
@@ -317,14 +357,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private void moveCamera(LatLng latLng, float zoom, String title) {
         Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng:" + latLng.longitude);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
-
-        if (!title.equals("My Location: ")) {
-            MarkerOptions markerOptions = new MarkerOptions()
-                    .position(latLng)
-                    .title(title);
-
-            mMap.addMarker(markerOptions);
-        }
 
     }
 

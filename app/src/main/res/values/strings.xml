@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">GeoRoute</string>
     <string name="google_map_key">AIzaSyAz8PNPYyW4QMBhhw--Ig4rgnrwx6_zX8A</string>
+    <string-array name="landmarks">
+    <item>Historical</item>
+    <item>Modern</item>
+    <item>Popular</item>
+    </string-array>
 </resources>

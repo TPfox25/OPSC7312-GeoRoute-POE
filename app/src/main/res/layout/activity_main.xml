@@ -9,13 +9,59 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Map"
+        android:id="@+id/btnNav"
+        android:layout_width="329dp"
+        android:layout_height="149dp"
+        android:background="@drawable/input_background"
+        android:drawableLeft="@drawable/ic_baseline_navigation_24"
+        android:text="Navigation"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.639" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="188dp"
+        android:layout_height="154dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027"
+        app:srcCompat="@drawable/geofinal" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="331dp"
+        android:layout_height="151dp"
+        android:background="@drawable/input_background"
+        android:drawableLeft="@drawable/ic_baseline_settings_24"
+        android:text="Settings"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.953" />
+
+    <Button
+        android:id="@+id/btnMap"
+        android:layout_width="323dp"
+        android:layout_height="142dp"
+        android:background="@drawable/input_background"
+        android:drawableLeft="@drawable/ic_baseline_map_24"
+        android:text="Map"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.341" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

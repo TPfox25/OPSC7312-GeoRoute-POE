@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final int ERROR_DIALOG_REQUEST = 9001;
-
+    private Button navigation_btn, settings_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,32 @@ public class MainActivity extends AppCompatActivity {
     private void init()
     {
         Button btnMap = (Button) findViewById(R.id.btnMap);
+        navigation_btn = (Button) findViewById(R.id.btnNav);
+        settings_btn = (Button) findViewById(R.id.btnSettings);
 
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent googleMap = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(googleMap);
+            }
+        });
+
+        navigation_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent navigate = new Intent(MainActivity.this,MapsNavigation.class);
+                startActivity(navigate);
+
+            }
+        });
+
+        settings_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent settings = new Intent(MainActivity.this, MapsSettings.class);
+                startActivity(settings);
             }
         });
     }
